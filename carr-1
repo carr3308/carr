@@ -1,1 +1,44 @@
-코드
+내 주소 "https://github.com/carr3308" (외어)
+
+코드 테스트 이벤트
+{
+  "Records": [
+      {
+          "s3": {
+              "bucket": {
+                "name": "my-data-s3-105"
+              },
+              "object": {
+                  "key": "data/data.csv"
+              }
+          }
+      }]
+}
+
+
+
+Athena 코드 (man)
+
+select count(*) from convert_output
+where sex='boy' and year between '1932'and '1967'
+
+(woman)
+
+select count(*) from convert_output
+where sex='girl' and year like '20%'
+
+
+EventBridge 코
+
+{
+  "source":["aws.s3"],
+  "detail.type":["Object Created"],
+  "detail":{
+    "bucket":{
+      "name":["my-data-s3-105"]
+    },
+    "object":{
+      "key":[{"prefix":"man/"},{"prefix":"woman/"}]
+    }
+  }
+}
